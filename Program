@@ -1,0 +1,32 @@
+term.clear()
+term.setCursorPos(1,1)
+print"From Which Printer You Want Some Details"
+print"Printer 1 Downstairs"
+print"Printer 2 OS Development"
+print"Define as p and the number of the printer"
+print"Example: Printer 1 = p1"
+local choice = read()
+if choice == "p1" then
+printer = peripheral.wrap("printer_2")
+term.clear()
+term.setCursorPos(1,1)
+print"Printer 1 Downstairs"
+local paperAmount = printer.getPaperLevel()
+local inkAmount = printer.getInkLevel()
+print("Ink:" .. inkAmount .. "")
+print("Paper:" .. paperAmount .. "")
+elseif choice == "p2" then
+printer = peripheral.wrap("printer_4")
+term.clear()
+term.setCursorPos(1,1)
+local paperAmount = printer.getPaperLevel()
+local inkAmount = printer.getInkLevel()
+print("Printer 2 OS Development")
+print("Ink:" ..inkAmount.. "")
+print("Paper:" ..paperAmount.. "")
+else
+print"Bad Input"
+sleep(4)
+term.clear()
+term.setCursorPos(1,1)
+end
